@@ -1,0 +1,29 @@
+spring:
+    datasource:
+        url: jdbc:postgresql://localhost:5432/restaurantdb
+        username: admin
+        password: secret
+    jpa:
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.PostgreSQLDialect
+        database: postgresql
+        database-platform: org.hibernate.dialect.PostgreSQLDialect
+        hibernate:
+#            ddl-auto: create
+            ddl-auto: update
+
+server:
+    error:
+        include-message: always
+        include-binding-errors: always
+        include-exception: false
+
+app:
+    jwt:
+        secret: ZmdpZXJhY2tpLWZnaWVyYWNraS1zZWNyZXQtcmVzdGF1cmFudC1hcGkta2V5LWZnaWVyYWNraS1mZ2llcmFja2ktc2VjcmV0LXJlc3RhdXJhbnQtYXBpLWtleQ==
+        expiration-milliseconds: 86400000 # 24h
+
+springdoc:
+    swagger-ui:
+        path: /docs.html #docs path
